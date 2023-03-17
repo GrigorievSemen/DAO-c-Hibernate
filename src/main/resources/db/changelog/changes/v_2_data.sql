@@ -1,15 +1,3 @@
-
-
-CREATE TABLE PERSONS
-(
-    name           VARCHAR(255)       NOT NULL,
-    surname        VARCHAR(255)       NOT NULL,
-    age            int                NOT NULL,
-    phone_number   VARCHAR(50) UNIQUE NOT NULL,
-    city_of_living VARCHAR(100)       NOT NULL,
-    PRIMARY KEY (name, surname, age)
-);
-
 INSERT INTO PERSONS (name, surname, age, phone_number, city_of_living)
 VALUES ('Коля', 'Петров', 26, '8-65-6541-9871', 'Москва'),
        ('Аня', 'Петров', 24, '5--4325-4657-4563', 'Псков'),
