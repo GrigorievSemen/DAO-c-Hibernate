@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -17,12 +15,18 @@ import java.io.Serializable;
 @Table(name = "persons")
 @Entity
 public class Person implements Serializable {
-    @Id
-    private String name;
-    @Id
-    private String surname;
-    @Id
-    private int age;
-    private String city_of_living;
-    private String phone_number;
+    @EmbeddedId
+    private PersonIdentity personIdentity;
+//    @Id
+//    private String name;
+//    @Id
+//    private String surname;
+//    @Id
+//    private int age;
+    @Column(name = "city_of_living", nullable = false)
+    private String city;
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
 }
+
+
