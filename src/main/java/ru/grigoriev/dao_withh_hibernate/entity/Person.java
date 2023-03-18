@@ -5,7 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Data
@@ -17,12 +20,7 @@ import java.io.Serializable;
 public class Person implements Serializable {
     @EmbeddedId
     private PersonIdentity personIdentity;
-//    @Id
-//    private String name;
-//    @Id
-//    private String surname;
-//    @Id
-//    private int age;
+
     @Column(name = "city_of_living", nullable = false)
     private String city;
     @Column(name = "phone_number", nullable = false)

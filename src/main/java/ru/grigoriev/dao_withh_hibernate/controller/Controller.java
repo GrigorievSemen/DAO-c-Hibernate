@@ -29,9 +29,9 @@ public class Controller {
 
     @GetMapping("/by-name-surname")
     @ResponseBody
-    public Optional<Person> getPersonsByNameSurname(@RequestParam("name") String name, @RequestParam("surname") String surname ) {
-        return Optional.ofNullable(repository.findPersonByPersonIdentity_NameAndPersonIdentity_Surname(name,surname)
-                        .orElseThrow(()-> new NotFoundException("Person not found.")));
+    public Optional<Person> getPersonsByNameSurname(@RequestParam("name") String name, @RequestParam("surname") String surname) {
+        return Optional.ofNullable(repository.findPersonByPersonIdentity_NameAndPersonIdentity_Surname(name, surname)
+                .orElseThrow(() -> new NotFoundException("Person not found.")));
     }
 }
 
