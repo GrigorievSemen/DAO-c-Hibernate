@@ -24,13 +24,13 @@ public class Controller {
     @GetMapping("/by-age")
     @ResponseBody
     public List<Person> getPersonsByAge(@RequestParam("age") int age) {
-        return repository.findByPersonIdentity_AgeLessThanOrderByPersonIdentity_Age(age);
+        return repository.findByAge(age);
     }
 
     @GetMapping("/by-name-surname")
     @ResponseBody
     public Optional<Person> getPersonsByNameSurname(@RequestParam("name") String name, @RequestParam("surname") String surname ) {
-        return Optional.ofNullable(repository.findPersonByPersonIdentity_NameAndPersonIdentity_Surname(name,surname)
+        return Optional.ofNullable(repository.findByNameSurname(name,surname)
                         .orElseThrow(()-> new NotFoundException("Person not found.")));
     }
 }
