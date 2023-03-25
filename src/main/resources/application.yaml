@@ -1,15 +1,13 @@
-spring:
-  liquibase:
-    enabled: true
-  datasource:
-    url: jdbc:postgresql://localhost:5432/test
-    username: postgres
-    password: postgres
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: true
-    generate-ddl: true
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/test
+#    username: postgres
+#    password: postgres
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    show-sql: true
+#    generate-ddl: true
 
 
 
